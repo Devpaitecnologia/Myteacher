@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="style.css"/>
+  <title>Hello, World!</title>
+</head>
+<body>
+  <!-- Modal para pedir nome -->
+<div class="modal" id="nameModal">
+  <div class="modal-content">
+    <h2>Bem-vindo(a)!</h2>
+    <p>Digite seu nome ou apelido:</p>
+    <input type="text" id="nameInput" placeholder="Ex: João, Anitta, MC Tal" maxlength="25" />
+    <br/>
+    <button onclick="salvarNome()">Entrar no editor</button>
+  </div>
+</div>
+
+  <div class="container">
+    <header class="header">
+      <h2>Sala</h2>
+          <div id="onlineCount">Carregando...</div>
+      <div class="hO">
+         <svg class=""fill="red" opacity="1.0" width="24" height="28" viewBox="0 0 24 28"><path d="M16 21.5V19c0-.281-.219-.5-.5-.5H14v-8c0-.281-.219-.5-.5-.5h-5c-.281 0-.5.219-.5.5V13c0 .281.219.5.5.5H10v5H8.5c-.281 0-.5.219-.5.5v2.5c0 .281.219.5.5.5h7c.281 0 .5-.219.5-.5zm-2-14V5c0-.281-.219-.5-.5-.5h-3c-.281 0-.5.219-.5.5v2.5c0 .281.219.5.5.5h3c.281 0 .5-.219.5-.5zM24 14c0 6.625-5.375 12-12 12S0 20.625 0 14 5.375 2 12 2s12 5.375 12 12z"/></svg>
+        <svg onclick="colors();"class="sp"fill="gold" opacity="1.0" width="30" height="39" viewBox="0 0 512 512"><path d="M256 64C150.401 64 64 150.401 64 256c0 105.604 86.401 192 192 192 18.136 0 32-13.864 32-32 0-8.531-3.198-16-8.531-21.333-5.333-5.334-8.531-12.803-8.531-21.334 0-18.135 13.864-32 32-32h38.396c58.667 0 106.667-48 106.667-106.666C448 140.802 361.604 64 256 64zM138.667 256c-18.136 0-32-13.864-32-32s13.864-32 32-32c18.135 0 32 13.864 32 32s-13.865 32-32 32zm64-85.333c-18.136 0-32-13.865-32-32 0-18.136 13.864-32 32-32 18.135 0 32 13.864 32 32 0 18.135-13.865 32-32 32zm106.666 0c-18.135 0-32-13.865-32-32 0-18.136 13.865-32 32-32 18.136 0 32 13.864 32 32 0 18.135-13.864 32-32 32zm64 85.333c-18.135 0-32-13.864-32-32s13.865-32 32-32c18.136 0 32 13.864 32 32s-13.864 32-32 32z"/></svg>
+      </div>    </header>
+    
+    <br>
+    <br>
+    <br>
+    <div id="colors"class="color">
+      <button class="btn1" onclick="colorWhite();"></button>
+      <button class="btn2"onclick="colorGray();"></button>
+   <button class="btn3"onclick="colorEscuro();"></button>
+   <button class="btn4"onclick="colorBurl();"></button>
+      
+      <svg onclick="exit();"fill="#757575" opacity="1.0" height="24" viewBox="0 0 24 24"><path d="M12 3c-4.963 0-9 4.038-9 9s4.037 9 9 9 9-4.038 9-9-4.037-9-9-9zm0 16c-3.859 0-7-3.14-7-7s3.141-7 7-7 7 3.14 7 7-3.141 7-7 7z"/><path d="M12.707 12l2.646-2.646a.502.502 0 0 0 0-.707.502.502 0 0 0-.707 0L12 11.293 9.354 8.646a.5.5 0 0 0-.707.707L11.293 12l-2.646 2.646a.5.5 0 0 0 .707.708L12 12.707l2.646 2.646a.5.5 0 1 0 .708-.706L12.707 12z"/></svg>
+    </div>
+ 
+      <div class="users-online">
+    <strong>Pessoas na sala:</strong>
+    <div id="usersList">Carregando....</div>
+  </div>
+    <div class="corpo">
+            <textarea id="editor" placeholder="Digite aqui... Todos verão em tempo real!"></textarea>
+  <div class="status" id="status">Conectando a sala</div>
+
+      <div class="op">
+        <button><svg fill="#757575" opacity="1.0" width="26" height="28" viewBox="0 0 26 28"><path d="M6 24c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm6 0c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm-6-6c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm12 6c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm-6-6c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm-6-6c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm12 6c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm-6-6c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm12 12v-6c0-1.094-.906-2-2-2-1.094 0-2 .906-2 2v6c0 1.094.906 2 2 2 1.094 0 2-.906 2-2zm-6-12c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm6-5V3c0-.547-.453-1-1-1H3c-.547 0-1 .453-1 1v4c0 .547.453 1 1 1h20c.547 0 1-.453 1-1zm0 5c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm2-10v24c0 1.094-.906 2-2 2H2c-1.094 0-2-.906-2-2V2C0 .906.906 0 2 0h22c1.094 0 2 .906 2 2z"/></svg>calculador</button>
+        <button><svg fill="#757575" opacity="1.0" width="26" height="28" viewBox="0 0 24 24"><path d="M12 23.016l-3.984-4.031h7.969zm6.984-15V6h-1.969v2.016h1.969zm0 3V9h-1.969v2.016h1.969zm-3-3V6h-1.969v2.016h1.969zm0 3V9h-1.969v2.016h1.969zm0 3.984v-2.016H8.015V15h7.969zm-9-6.984V6H5.015v2.016h1.969zm0 3V9H5.015v2.016h1.969zM8.016 9v2.016h1.969V9H8.016zm0-3v2.016h1.969V6H8.016zm3 3v2.016h1.969V9h-1.969zm0-3v2.016h1.969V6h-1.969zm9-3c1.078 0 1.969.938 1.969 2.016V15c0 1.078-.891 2.016-1.969 2.016H3.985c-1.078 0-1.969-.938-1.969-2.016V5.016C2.016 3.938 2.907 3 3.985 3h16.031z"/></svg>teclados
+          
+        </button>
+        <button><svg width="26" height="28" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M20.103 9.589l.719-.719a4.028 4.028 0 0 0 0-5.692 4.028 4.028 0 0 0-5.692 0l-.719.719 5.692 5.692zm-7.106-4.278l-8.905 8.904 3.572.708 7.472-7.474zM2.295 21.706c.247.248.608.347.949.263l4.678-1.17-.78-3.941-3.941-.781-1.169 4.678c-.085.342.014.702.263.951zM16.55 8.863l-7.472 7.474.707 3.57 8.904-8.904z" fill="#757575"/></svg>Caneta</button>
+      </div>
+   
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+  <script src="js.js"></script>
+      <script src="app.js"></script>
+</body>
+</html>
