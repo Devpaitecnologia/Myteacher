@@ -34,3 +34,10 @@ function colorBurl(){
     document.getElementById("editor").style.color = "white"
 
 }
+// calculador
+function calculadora(){
+    
+    document.getElementById("calculador").style.display = "block"
+    //document.getElementById("editior").style.color = "white"
+
+}

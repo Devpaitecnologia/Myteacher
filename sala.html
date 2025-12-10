@@ -44,21 +44,56 @@
     <div id="usersList">Carregando....</div>
   </div>
     <div class="corpo">
-            <textarea id="editor" placeholder="Digite aqui... Todos verão em tempo real!"></textarea>
+            <textarea id="editor"  placeholder="Digite aqui... Todos verão em tempo real!"></textarea>
   <div class="status" id="status">Conectando a sala</div>
 
       <div class="op">
-        <button><svg fill="#757575" opacity="1.0" width="26" height="28" viewBox="0 0 26 28"><path d="M6 24c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm6 0c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm-6-6c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm12 6c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm-6-6c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm-6-6c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm12 6c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm-6-6c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm12 12v-6c0-1.094-.906-2-2-2-1.094 0-2 .906-2 2v6c0 1.094.906 2 2 2 1.094 0 2-.906 2-2zm-6-12c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm6-5V3c0-.547-.453-1-1-1H3c-.547 0-1 .453-1 1v4c0 .547.453 1 1 1h20c.547 0 1-.453 1-1zm0 5c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm2-10v24c0 1.094-.906 2-2 2H2c-1.094 0-2-.906-2-2V2C0 .906.906 0 2 0h22c1.094 0 2 .906 2 2z"/></svg>calculador</button>
-        <button><svg fill="#757575" opacity="1.0" width="26" height="28" viewBox="0 0 24 24"><path d="M12 23.016l-3.984-4.031h7.969zm6.984-15V6h-1.969v2.016h1.969zm0 3V9h-1.969v2.016h1.969zm-3-3V6h-1.969v2.016h1.969zm0 3V9h-1.969v2.016h1.969zm0 3.984v-2.016H8.015V15h7.969zm-9-6.984V6H5.015v2.016h1.969zm0 3V9H5.015v2.016h1.969zM8.016 9v2.016h1.969V9H8.016zm0-3v2.016h1.969V6H8.016zm3 3v2.016h1.969V9h-1.969zm0-3v2.016h1.969V6h-1.969zm9-3c1.078 0 1.969.938 1.969 2.016V15c0 1.078-.891 2.016-1.969 2.016H3.985c-1.078 0-1.969-.938-1.969-2.016V5.016C2.016 3.938 2.907 3 3.985 3h16.031z"/></svg>teclados
+        <button onclick="calculadora();"><svg fill="#757575" opacity="1.0" width="26" height="28" viewBox="0 0 26 28"><path d="M6 24c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm6 0c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm-6-6c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm12 6c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm-6-6c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm-6-6c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm12 6c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm-6-6c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm12 12v-6c0-1.094-.906-2-2-2-1.094 0-2 .906-2 2v6c0 1.094.906 2 2 2 1.094 0 2-.906 2-2zm-6-12c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm6-5V3c0-.547-.453-1-1-1H3c-.547 0-1 .453-1 1v4c0 .547.453 1 1 1h20c.547 0 1-.453 1-1zm0 5c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm2-10v24c0 1.094-.906 2-2 2H2c-1.094 0-2-.906-2-2V2C0 .906.906 0 2 0h22c1.094 0 2 .906 2 2z"/></svg></button>
+        <button><svg fill="#757575" opacity="1.0" width="26" height="28" viewBox="0 0 24 24"><path d="M12 23.016l-3.984-4.031h7.969zm6.984-15V6h-1.969v2.016h1.969zm0 3V9h-1.969v2.016h1.969zm-3-3V6h-1.969v2.016h1.969zm0 3V9h-1.969v2.016h1.969zm0 3.984v-2.016H8.015V15h7.969zm-9-6.984V6H5.015v2.016h1.969zm0 3V9H5.015v2.016h1.969zM8.016 9v2.016h1.969V9H8.016zm0-3v2.016h1.969V6H8.016zm3 3v2.016h1.969V9h-1.969zm0-3v2.016h1.969V6h-1.969zm9-3c1.078 0 1.969.938 1.969 2.016V15c0 1.078-.891 2.016-1.969 2.016H3.985c-1.078 0-1.969-.938-1.969-2.016V5.016C2.016 3.938 2.907 3 3.985 3h16.031z"/></svg>
           
         </button>
         <button><svg width="26" height="28" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M20.103 9.589l.719-.719a4.028 4.028 0 0 0 0-5.692 4.028 4.028 0 0 0-5.692 0l-.719.719 5.692 5.692zm-7.106-4.278l-8.905 8.904 3.572.708 7.472-7.474zM2.295 21.706c.247.248.608.347.949.263l4.678-1.17-.78-3.941-3.941-.781-1.169 4.678c-.085.342.014.702.263.951zM16.55 8.863l-7.472 7.474.707 3.57 8.904-8.904z" fill="#757575"/></svg>Caneta</button>
       </div>
-   
+      <!---calculadora--->
+      <br>
+    
+  <div id="calculador" class="calculadora">
+    <br>
+    <input type="text" class="display" id="display" readonly>
+    <div class="btns">
+      <button onclick="limpar()">C</button>
+      <button onclick="apagar()" class="operador">⌫</button>
+      <button onclick="inserir('/')" class="operador">÷</button>
+      <button onclick="inserir('×')" class="operador">×</button>
+
+      <button onclick="inserir('7')">7</button>
+      <button onclick="inserir('8')">8</button>
+      <button onclick="inserir('9')">9</button>
+      <button onclick="inserir('-')" class="operador">−</button>
+
+      <button onclick="inserir('4')">4</button>
+      <button onclick="inserir('5')">5</button>
+      <button onclick="inserir('6')">6</button>
+      <button onclick="inserir('+')" class="operador">+</button>
+
+      <button onclick="inserir('1')">1</button>
+      <button onclick="inserir('2')">2</button>
+      <button onclick="inserir('3')">3</button>
+      <button onclick="calcular()" class="igual" rowspan="2">=</button>
+
+      <button onclick="inserir('0')" class="zero">0</button>
+      <button onclick="inserir('.')">.</button>
+      <button onclick="raizQuadrada()" style="background:#9b59b6; grid-column:span 2;">√</button>
+    </div>
   </div>
+      
+    </!---calculadora--->
+  </div>
+  
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
   <script src="js.js"></script>
+ <script src="calcular.js"></script>
       <script src="app.js"></script>
 </body>
 </html>
