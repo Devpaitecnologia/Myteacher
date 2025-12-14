@@ -41,3 +41,11 @@ function calculadora(){
     //document.getElementById("editior").style.color = "white"
 
 }
+//perfil
+function perfil(){
+    document.getElementById("app").style.display = "none"
+  
+    document.getElementById("perfil-form").style.display = "block"
+    //document.getElementById("editor").style.color = "white"
+
+}

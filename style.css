@@ -28,7 +28,8 @@ body{
  padding: 10px;
   
 }
-.modal-content input{
+.modal-content input,
+select{
   height: 45px;
   padding: 10px;
   font-size: 1.2rem;
@@ -71,8 +72,11 @@ h2{
   color: cornflowerblue;
 }
 .corp{
-  padding: 10px;
   
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
 }
 a{
   text-decoration: none;
@@ -102,6 +106,7 @@ color: goldenrod;
 }
 .amigos{
   margin-top: 10px;
+  
   padding: px;
   width:100%;
   
@@ -207,7 +212,7 @@ color: goldenrod;
 #usersList{
   width: 100%;
   display: flex;
-  overflow-y: scroll;
+  
 }
 .teclas{
   
@@ -216,7 +221,7 @@ color: goldenrod;
   position: fixed;
   bottom: 0;
   padding: 15px;
-  overflow-y: scroll;
+  
 }
    textarea {
      backgroud: burlywood;

@@ -22,24 +22,27 @@
   </div>
 </div>
   <!---formulario-->
-  <div class="modal" id="perfil-form" style="display:none;">
+  <div class="modal" id="perfil-form" id="nameModal"style="display:none;">
   <div class="modal-content">
     <h2>Complete seu perfil</h2>
-    <input type="text" id="nome" placeholder="Seu nome completo">
-    <input type="text" id="turma" placeholder="Sua turma (ex: 3º Ano A)">
+    <input type="text" id="nome nameInput" placeholder="Seu nome completo">
+    <input type="text" id="turma" placeholder="Aluno ou Professor">
         <select  id="img">
-          <option value="menina">Estudante Mocinha</option>
+           <option value="jh">Estudante homem</option>
+        
+          <option value="jf">Estudante Mocinha</option>
         </select>
 
     <input type="file" id="foto" accept="image/*">
-    <button class="btn" onclick="salvarPerfil()">Salvar e Entrar</button>
+    <button class="btn" onclick="salvarNome()" onclick="salvarPerfil()">Salvar e Entrar</button>
   </div>
 </div>
+ 
 </!---formulario-->
   <div id="app" class="container">
     <header>
-      <h2>My-Teacher</h2>
-      <p id="meu-nome">voce</p>
+      <h2 onclick="perfil();">My-Teacher</h2>
+      <p id="meu-nome"></p>
          <svg fill="#757575" opacity="1.0" width="24" height="28" viewBox="0 0 24 28"><path d="M16 21.5V19c0-.281-.219-.5-.5-.5H14v-8c0-.281-.219-.5-.5-.5h-5c-.281 0-.5.219-.5.5V13c0 .281.219.5.5.5H10v5H8.5c-.281 0-.5.219-.5.5v2.5c0 .281.219.5.5.5h7c.281 0 .5-.219.5-.5zm-2-14V5c0-.281-.219-.5-.5-.5h-3c-.281 0-.5.219-.5.5v2.5c0 .281.219.5.5.5h3c.281 0 .5-.219.5-.5zM24 14c0 6.625-5.375 12-12 12S0 20.625 0 14 5.375 2 12 2s12 5.375 12 12z"/></svg>
  
     </header>
@@ -80,5 +83,6 @@
 <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-database-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-storage-compat.js"></script>
 <script src="chat.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
