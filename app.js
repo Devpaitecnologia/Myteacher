@@ -45,14 +45,23 @@ function calculadora(){
 function perfil(){
     document.getElementById("app").style.display = "none"
   
-    document.getElementById("nameModal").style.display = "block"
-    document.getElementById("perfil-form").style.display = "block"
+   // document.getElementById("nameModal").style.display = "block"
+   document.getElementById("perfil-form").style.display = "block"
   
     
     //document.getElementById("editor").style.color = "white"
 
 }
+function perfils(){
+    document.getElementById("app").style.display = "none"
+  
+    document.getElementById("nameModal").style.display = "block"
+   // document.getElementById("perfil-form").style.display = "block"
+  
+    
+    //document.getElementById("editor").style.color = "white"
 
+}
 //add
 function add(){
     document.getElementById("add").style.display = "block"
