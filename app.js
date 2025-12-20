@@ -43,10 +43,10 @@ function calculadora(){
 }
 //perfil
 function perfil(){
-    document.getElementById("app").style.display = "none"
+  //  document.getElementById("app").style.display = "none";
   
    // document.getElementById("nameModal").style.display = "block"
-   document.getElementById("perfil-form").style.display = "block"
+ document.getElementById("perfil-form").style.display = "block";
   
     
     //document.getElementById("editor").style.color = "white"
