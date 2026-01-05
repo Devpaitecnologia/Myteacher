@@ -2,6 +2,8 @@
 
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
   <link rel="stylesheet" href="style.css"/>
    <link rel="stylesheet" href="chat.css"/>
@@ -23,15 +25,31 @@
 </div>
   <!---formulario-->
   <div class="modal" id="perfil-form" style="display:none;">
+    
   <div class="modal-content">
+    <div class="selectImg"id="imagem-container"></div>
+
     <h2>Complete seu perfil</h2>
     <input type="text" id="nome" placeholder="Seu nome completo">
     <input type="text" id="turma" placeholder="Aluno ou Professor">
         <select  id="img">
-           <option value="jh">Estudante homem</option>
-          <option value="jf">Estudante Mocinha</option>
+           <option value="ph">Prefessor 1</option>
+          <option value="ph3">Prefessor 2</option>
+          <option value="ph4">Prefessor 3</option>
+          <option value="pf">Prefessora</option>
+      <option value="pf1">Prefessora 2</option>
+          <option value="pf2">Professora 3</option>
+      <option value="jh">Aluno 1</option>
+          <option value="ah1">Aluno 2</option>
+       <option value="ah3">Aluno 3</option>
+          <option value="jf">Aluna 1</option>
+       <option value="af2">Aluna 2</option>
+      
+           <option value="af4">Aluna 3</option>
+      
+          
         </select>
-
+    
     <input type="file" id="foto" accept="image/*">
     <button  class="btn" onclick="salvarPerfil()">Salvar e Entrar</button>
   </div>
@@ -61,13 +79,13 @@
         <button class="tab-btn active" onclick="aba('pessoas')">Pessoas</button>
         <button class="tab-btn" onclick="aba('grupos')">Grupos</button>
       </div>
-      
-      </div>
-      <!---amigos-->
+        <!---amigos-->
       <div id="lista-pessoas" class="lista"></div>
         
       <div id="lista-grupos" class="lista" style="display:none;"></div>
 </!---amigos-->
+      </div>
+    
           <svg onclick="mais();"class="svg" fill="#757575" opacity="1.0" width="24" height="24" viewBox="0 0 24 24"><path d="M17.016 12.984v-1.969h-4.031V6.984h-1.969v4.031H6.985v1.969h4.031v4.031h1.969v-4.031h4.031zM12 2.016c5.531 0 9.984 4.453 9.984 9.984S17.531 21.984 12 21.984 2.016 17.531 2.016 12 6.469 2.016 12 2.016z"/></svg>
       </div>
  
@@ -86,5 +104,30 @@
 <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-storage-compat.js"></script>
 <script src="chat.js"></script>
 <script src="app.js"></script>
+<script>
+
+const select = document.getElementById('img');
+const container = document.getElementById('imagem-container');
+
+// Adiciona um evento de mudança ao select
+select.addEventListener('change', (e) => {
+  const valor = e.target.value;
+  const img = document.createElement('img');
+  img.src =`${valor}.jpg`;
+  container.innerHTML = '';
+  container.appendChild(img);
+});
+
+// Adiciona um evento de clique ao container
+container.addEventListener('click', () => {
+  select.click();
+});
+
+// Inicializa o container com a primeira imagem
+const primeiraImagem = select.options[0].value;
+const img = document.createElement('img');
+img.src = primeiraImagem;
+container.appendChild(img);
+</script>
 </body>
 </html>
