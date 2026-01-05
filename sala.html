@@ -4,9 +4,12 @@
 <head>
   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
   <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="sala.css"/>
+
   <title>Hello, World!</title>
 </head>
-<body>
+<body id="body">
+  <section id="body1">
   <!-- Modal para pedir nome -->
 <div class="modal" id="nameModal">
   <div class="modal-content">
@@ -74,13 +77,73 @@
     <strong>Pessoas na sala:</strong>
     <div id="usersList">Carregando....</div>
   </div>
+  </section>
     <div class="corpo">
-            <textarea id="editor"  placeholder="Digite aqui... Todos verão em tempo real!"></textarea>
-  <div class="status" id="status">Conectando a sala</div>
+      <div class="quadro">
+        <div class="btnl" id="mathKeyboard">
+  
+        <div class="Anpliar">
+           <svg onclick="anpliar();" fill="#757575" opacity="1.0" width="24" height="24" viewBox="0 0 24 24"><path d="M21 15v6h-6l2.297-2.297-2.906-2.859 1.453-1.453 2.859 2.906zM9 21H3v-6l2.297 2.297 2.859-2.906 1.453 1.453-2.906 2.859zM3 9V3h6L6.703 5.297l2.906 2.859-1.453 1.453-2.859-2.906zm12-6h6v6l-2.297-2.297-2.859 2.906-1.453-1.453 2.906-2.859z"/></svg>
+    
+        </div>       <button class="wide" onclick="document.getElementById('editor').value = ''">Limpar</button>
+    <button class="wide" onclick="insertAtCaret('editor', ' ')">Espaço</button>
+    <button class="wide" onclick="insertAtCaret('editor', '\n')">Nova li</button>
 
+      </div>
+  
+               <textarea id="editor"  placeholder="Digite aqui... Todos verão em tempo real!"></textarea>
+      </div>
+  <div class="status" id="status">Conectando a sala</div>
+      <!--- teclados -->
+      <div class="teclados" id="mathKeyboard">
+        <button>∆</button>
+        <button>√</button>
+        <button>~</button>
+        <button>=</button>
+        <button>×</button>
+         <button>-</button>
+        <button>+</button>
+        <button>(</button>
+        <button>)</button>
+        <button>[</button>
+         <button>]</button>
+        <button>{</button>
+        <button>}</button>
+        <button>\</button>
+        <button>÷</button>
+      </div>
+      <div class="teclados" id="mathKeyboard" >
+        <button>≥</button>
+    <button>≪</button>
+    <button>≫</button>
+    <button>⊂</button>
+    <button>⊃</button>
+    <button>⊆</button>
+    <button>⊇</button>
+    <button>∈</button>
+    <button>∋</button>
+    <button>∉</button>
+    <button>∩</button>
+    <button>∪</button>
+      </div>
+      <div class="teclados" id="mathKeyboard">
+        <button>°</button>
+    <button>′</button>
+    <button>″</button>
+    <button>ℏ</button>
+    <button>ℓ</button>
+    <button>ℝ</button>
+    <button>ℂ</button>
+    <button>ℕ</button>
+    <button>ℤ</button>
+    <button>ℚ</button>
+    <button>∅</button>
+    <button>⊥</button>
+      </div>
+       </!--->
       <div class="op">
         <button onclick="calculadora();"><svg fill="#757575" opacity="1.0" width="26" height="28" viewBox="0 0 26 28"><path d="M6 24c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm6 0c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm-6-6c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm12 6c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm-6-6c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm-6-6c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm12 6c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm-6-6c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm12 12v-6c0-1.094-.906-2-2-2-1.094 0-2 .906-2 2v6c0 1.094.906 2 2 2 1.094 0 2-.906 2-2zm-6-12c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm6-5V3c0-.547-.453-1-1-1H3c-.547 0-1 .453-1 1v4c0 .547.453 1 1 1h20c.547 0 1-.453 1-1zm0 5c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm2-10v24c0 1.094-.906 2-2 2H2c-1.094 0-2-.906-2-2V2C0 .906.906 0 2 0h22c1.094 0 2 .906 2 2z"/></svg></button>
-        <button><svg fill="#757575" opacity="1.0" width="26" height="28" viewBox="0 0 24 24"><path d="M12 23.016l-3.984-4.031h7.969zm6.984-15V6h-1.969v2.016h1.969zm0 3V9h-1.969v2.016h1.969zm-3-3V6h-1.969v2.016h1.969zm0 3V9h-1.969v2.016h1.969zm0 3.984v-2.016H8.015V15h7.969zm-9-6.984V6H5.015v2.016h1.969zm0 3V9H5.015v2.016h1.969zM8.016 9v2.016h1.969V9H8.016zm0-3v2.016h1.969V6H8.016zm3 3v2.016h1.969V9h-1.969zm0-3v2.016h1.969V6h-1.969zm9-3c1.078 0 1.969.938 1.969 2.016V15c0 1.078-.891 2.016-1.969 2.016H3.985c-1.078 0-1.969-.938-1.969-2.016V5.016C2.016 3.938 2.907 3 3.985 3h16.031z"/></svg>
+        <button id="btnR"><svg fill="#757575" opacity="1.0" width="26" height="28" viewBox="0 0 24 24"><path d="M12 23.016l-3.984-4.031h7.969zm6.984-15V6h-1.969v2.016h1.969zm0 3V9h-1.969v2.016h1.969zm-3-3V6h-1.969v2.016h1.969zm0 3V9h-1.969v2.016h1.969zm0 3.984v-2.016H8.015V15h7.969zm-9-6.984V6H5.015v2.016h1.969zm0 3V9H5.015v2.016h1.969zM8.016 9v2.016h1.969V9H8.016zm0-3v2.016h1.969V6H8.016zm3 3v2.016h1.969V9h-1.969zm0-3v2.016h1.969V6h-1.969zm9-3c1.078 0 1.969.938 1.969 2.016V15c0 1.078-.891 2.016-1.969 2.016H3.985c-1.078 0-1.969-.938-1.969-2.016V5.016C2.016 3.938 2.907 3 3.985 3h16.031z"/></svg>
           
         </button>
         

@@ -1,0 +1,38 @@
+.quadro{
+  
+}
+
+.teclados{
+  display: flex;
+  position: relative;
+  overflow: auto;
+  overflow-y: scroll;
+  width: 100%;
+  pading: 10px;
+  position: fixe;
+  margin-bottom: 10px;
+}
+.teclados button{
+  height: 30px;
+  border: none;
+  width: 30px;
+  cursor: pointer;
+  
+}
+.btnl{
+  display: flex;
+}
+.btnl button{
+  padding: 6px;
+  height: 25px;
+  border: none;
+  cursor: pointer;
+}
+
+ textarea {
+     backgroud: burlywood;
+   font-size: 1.9rem;
+      width: 100%; height: 60vh; padding: 15px; font-size: 24px;
+      font-family: 'Courier New', monospace; border: 2px solid ,#3498db;
+      border-radius: 8px; resize: vertical; margin-bottom: px;
+    }

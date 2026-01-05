@@ -75,3 +75,51 @@ function mais(){
    document.getElementById("a").style.display = "none"
 
 }
+// anpliar no quadro
+function dese(){
+document.querySelector(".Anpliar").innerHTML =`
+      <svg onclick="anpliar();" fill="#757575" opacity="1.0" width="24" height="24" viewBox="0 0 24 24"><path d="M21 15v6h-6l2.297-2.297-2.906-2.859 1.453-1.453 2.859 2.906zM9 21H3v-6l2.297 2.297 2.859-2.906 1.453 1.453-2.906 2.859zM3 9V3h6L6.703 5.297l2.906 2.859-1.453 1.453-2.859-2.906zm12-6h6v6l-2.297-2.297-2.859 2.906-1.453-1.453 2.906-2.859z"/></svg>
+    
+    `
+   document.getElementById("body1").style.display = "none"
+document.getElementById("editor").style.display = "block"
+
+}
+function anpliar(){
+   document.querySelector(".Anpliar").innerHTML =`
+     <svg onclick="dese();" fill="#757575" opacity="1.0" width="24" height="24" viewBox="0 0 24 24"><path d="M21 15v6h-6l2.297-2.297-2.906-2.859 1.453-1.453 2.859 2.906zM9 21H3v-6l2.297 2.297 2.859-2.906 1.453 1.453-2.906 2.859zM3 9V3h6L6.703 5.297l2.906 2.859-1.453 1.453-2.859-2.906zm12-6h6v6l-2.297-2.297-2.859 2.906-1.453-1.453 2.906-2.859z"/></svg>
+      
+      `
+   document.getElementById("body1").style.display = "block"
+document.getElementById("editor").style.display = "block"
+
+}
+// adionado reAdOnly
+
+const textarea = document.getElementById('editor');
+const botao = document.getElementById('btnR');
+
+botao.addEventListener('click', () => {
+  textarea.readOnly = !textarea.readOnly;
+});
+//teclados
+
+    
+// Insere o texto no cursor (funciona mesmo se o textarea estiver com texto selecionado)
+function insertAtCaret(areaId, text) {
+    const area = document.getElementById(areaId);
+    const start = area.selectionStart;
+    const end = area.selectionEnd;
+    const value = area.value;
+    
+    area.value = value.substring(0, start) + text + value.substring(end);
+    area.selectionStart = area.selectionEnd = start + text.length;
+    area.focus();
+}
+
+// Adiciona o evento de clique a todos os botões do teclado
+document.querySelectorAll('#mathKeyboard button').forEach(btn => {
+    if (!btn.onclick) {  // evita sobrescrever os botões especiais (Limpar, etc.)
+        btn.onclick = () => insertAtCaret('editor', btn.textContent);
+    }
+});
