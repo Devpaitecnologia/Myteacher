@@ -8,7 +8,7 @@
 
   <title>Hello, World!</title>
 </head>
-<body id="body">
+<body  onbeforeunload="return false;" id="body">
   <section id="body1">
   <!-- Modal para pedir nome -->
 <div class="modal" id="nameModal">
@@ -23,7 +23,7 @@
 
   <div id="app" class="container">
     <header class="header">
-      <h2 onclick="perfils();">Sala</h2>
+     <svg id="sairSala" fill="#757575" opacity="1.0" height="24" viewBox="0 0 24 24"><path d="M19.164 19.547c-1.641-2.5-3.669-3.285-6.164-3.484V17.5c0 .534-.208 1.036-.586 1.414-.756.756-2.077.751-2.823.005l-6.293-6.207a1 1 0 0 1 0-1.425l6.288-6.203c.754-.755 2.073-.756 2.829.001.377.378.585.88.585 1.414v1.704c4.619.933 8 4.997 8 9.796v1a.999.999 0 0 1-1.836.548zm-7.141-5.536c2.207.056 4.638.394 6.758 2.121a7.985 7.985 0 0 0-6.893-6.08C11.384 9.996 11 10 11 10V6.503l-5.576 5.496 5.576 5.5V14s.738.01 1.023.011z"/></svg> <h2 onclick="perfils();">Sala</h2>
           <div id="onlineCount">Carregando...</div>
       <div class="hO">
         <svg onclick="add();" fill="#757575" class="sp" opacity="1.0" width="35" height="50" viewBox="0 0 25 25"><path d="M18.984 12.984h-6v6h-1.969v-6h-6v-1.969h6v-6h1.969v6h6v1.969z"/></svg>
@@ -85,9 +85,10 @@
         <div class="Anpliar">
            <svg onclick="anpliar();" fill="#757575" opacity="1.0" width="24" height="24" viewBox="0 0 24 24"><path d="M21 15v6h-6l2.297-2.297-2.906-2.859 1.453-1.453 2.859 2.906zM9 21H3v-6l2.297 2.297 2.859-2.906 1.453 1.453-2.906 2.859zM3 9V3h6L6.703 5.297l2.906 2.859-1.453 1.453-2.859-2.906zm12-6h6v6l-2.297-2.297-2.859 2.906-1.453-1.453 2.906-2.859z"/></svg>
     
-        </div>       <button class="wide" onclick="document.getElementById('editor').value = ''">Limpar</button>
-    <button class="wide" onclick="insertAtCaret('editor', ' ')">Espaço</button>
-    <button class="wide" onclick="insertAtCaret('editor', '\n')">Nova li</button>
+        </div>    
+          <button class="wide" onclick="insertAtCaret('editor', ' ')">Espaço</button>
+          <button class="wide" onclick="document.getElementById('editor').value = ''">Limpar</button>
+          <button class="wide" onclick="insertAtCaret('editor', '\n')">Nova li</button>
 
       </div>
   
@@ -240,7 +241,7 @@
       const tarefa = tarefaInput.value.trim();
       if (tarefa !== '') {
         adicionarTarefa(tarefa);
-        tarefaInput.value = '';
+        //tarefaInput.value = '';
       }
     });
 
