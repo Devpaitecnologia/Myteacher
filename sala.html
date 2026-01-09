@@ -2,13 +2,15 @@
 
 <html>
 <head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
   <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="sala.css"/>
 
   <title>Hello, World!</title>
 </head>
-<body  onbeforeunload="return false;" id="body">
+<body  id="body">
   <section id="body1">
   <!-- Modal para pedir nome -->
 <div class="modal" id="nameModal">
@@ -23,8 +25,8 @@
 
   <div id="app" class="container">
     <header class="header">
-     <svg id="sairSala" fill="#757575" opacity="1.0" height="24" viewBox="0 0 24 24"><path d="M19.164 19.547c-1.641-2.5-3.669-3.285-6.164-3.484V17.5c0 .534-.208 1.036-.586 1.414-.756.756-2.077.751-2.823.005l-6.293-6.207a1 1 0 0 1 0-1.425l6.288-6.203c.754-.755 2.073-.756 2.829.001.377.378.585.88.585 1.414v1.704c4.619.933 8 4.997 8 9.796v1a.999.999 0 0 1-1.836.548zm-7.141-5.536c2.207.056 4.638.394 6.758 2.121a7.985 7.985 0 0 0-6.893-6.08C11.384 9.996 11 10 11 10V6.503l-5.576 5.496 5.576 5.5V14s.738.01 1.023.011z"/></svg> <h2 onclick="perfils();">Sala</h2>
-          <div id="onlineCount">Carregando...</div>
+    <svg onclick="sairSala()" fill="#757575" opacity="1.0" height="24" viewBox="0 0 24 24"><path d="M19.164 19.547c-1.641-2.5-3.669-3.285-6.164-3.484V17.5c0 .534-.208 1.036-.586 1.414-.756.756-2.077.751-2.823.005l-6.293-6.207a1 1 0 0 1 0-1.425l6.288-6.203c.754-.755 2.073-.756 2.829.001.377.378.585.88.585 1.414v1.704c4.619.933 8 4.997 8 9.796v1a.999.999 0 0 1-1.836.548zm-7.141-5.536c2.207.056 4.638.394 6.758 2.121a7.985 7.985 0 0 0-6.893-6.08C11.384 9.996 11 10 11 10V6.503l-5.576 5.496 5.576 5.5V14s.738.01 1.023.011z"/></svg> <h2 onclick="perfils();">Sala</h2>
+    <div id="onlineCount">Carregando...</div>
       <div class="hO">
         <svg onclick="add();" fill="#757575" class="sp" opacity="1.0" width="35" height="50" viewBox="0 0 25 25"><path d="M18.984 12.984h-6v6h-1.969v-6h-6v-1.969h6v-6h1.969v6h6v1.969z"/></svg>
               <svg class=""fill="red" class="sp" opacity="1.0" width="24" height="28" viewBox="0 0 24 28"><path d="M16 21.5V19c0-.281-.219-.5-.5-.5H14v-8c0-.281-.219-.5-.5-.5h-5c-.281 0-.5.219-.5.5V13c0 .281.219.5.5.5H10v5H8.5c-.281 0-.5.219-.5.5v2.5c0 .281.219.5.5.5h7c.281 0 .5-.219.5-.5zm-2-14V5c0-.281-.219-.5-.5-.5h-3c-.281 0-.5.219-.5.5v2.5c0 .281.219.5.5.5h3c.281 0 .5-.219.5-.5zM24 14c0 6.625-5.375 12-12 12S0 20.625 0 14 5.375 2 12 2s12 5.375 12 12z"/></svg>

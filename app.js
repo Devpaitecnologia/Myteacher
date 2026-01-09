@@ -1,3 +1,27 @@
+
+//progresss
+// Seleciona a barra de progresso
+const progressBar = document.querySelector('.progress');
+
+// Define a largura inicial da barra de progresso
+let width = 0;
+
+// Define a função que atualiza a largura da barra de progresso
+function updateProgress() {
+  width += 1;
+  progressBar.style.width = width + '%';
+    document.getElementById('main').style.display = "none";
+  if (width >= 100) {
+    // Redireciona para outra página após 5 segund
+     document.getElementById('main').style.display = "block";
+document.querySelector('.progress-bar').style.display = "none";
+  } else {
+    setTimeout(updateProgress, 50); // 50ms * 100 = 5s
+  }
+}
+
+// Inicia a atualização da barra de progresso
+updateProgress();
 // color quadro
 function colors(){
     
@@ -104,7 +128,15 @@ botao.addEventListener('click', () => {
 });
 //teclados
 
-    
+   //sair da sala
+/*const sairSala = document.getElementById('sairSala');
+
+sairSala.addEventListener('click', () => {
+    window.location.href = 'index.html';
+});*/
+function sairSala(){
+  window.location.href = 'index.html';
+}
 // Insere o texto no cursor (funciona mesmo se o textarea estiver com texto selecionado)
 function insertAtCaret(areaId, text) {
     const area = document.getElementById(areaId);
@@ -123,3 +155,7 @@ document.querySelectorAll('#mathKeyboard button').forEach(btn => {
         btn.onclick = () => insertAtCaret('editor', btn.textContent);
     }
 });
+
+
+
+
